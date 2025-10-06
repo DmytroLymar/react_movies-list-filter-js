@@ -11,9 +11,9 @@ function prepareMovies(movies, query) {
   }
 
   return movies.filter(
-    ({ title, description }) =>
-      title.toLowerCase().includes(normalizedQuery) ||
-      description.toLowerCase().includes(normalizedQuery),
+    movie =>
+      movie.title.toLowerCase().includes(normalizedQuery) ||
+      (movie.description || '').toLowerCase().includes(normalizedQuery),
   );
 }
 
